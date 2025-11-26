@@ -1,5 +1,6 @@
 name: Autograding Tests
 'on':
+- workflow_dispatch
 - push
 - repository_dispatch
 permissions:
@@ -18,7 +19,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Parser Tests
-        setup-command: "./setup.sh"
+        setup-command: ''
         command: gradle test
         timeout: 10
     - name: Autograding Reporter
